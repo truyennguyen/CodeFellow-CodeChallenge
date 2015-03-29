@@ -16,17 +16,9 @@ $("#addEvenShelf").click(function() {
 
 function main(books)
 {
-	//clear the shelf to add new books
-	offShelfBooks = [];
-	_.forEach(books, function(books) {
-		if (books.status === "offShelf") {
-			offShelfBooks.push(books.title + ' is written by ' + books.author
-				+ '	<input type="button" value="Add" onclick="' + books.id + '.add()"> ' + '<br>');
-		}
-	});
 	addBooksOddShelf(books);
 	addBooksEvenShelf(books);
-	$("#off-shelf-books").html(offShelfBooks);
+	removeBooks(books);
 }
 
 main(books);

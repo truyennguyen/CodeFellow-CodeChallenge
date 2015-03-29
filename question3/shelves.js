@@ -29,3 +29,16 @@ function addBooksEvenShelf(books)
 	});
 	$("#even-shelf").html(evenShelf);
 }
+
+function removeBooks(books)
+{
+	//clear the shelf to add new books
+	offShelfBooks = [];
+	_.forEach(books, function(books) {
+		if (books.status === "offShelf") {
+			offShelfBooks.push(books.title + ' is written by ' + books.author
+				+ '	<input type="button" value="Add" onclick="' + books.id + '.add()"> ' + '<br>');
+		}
+	});
+	$("#off-shelf-books").html(offShelfBooks);
+}
