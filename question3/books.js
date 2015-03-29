@@ -5,18 +5,18 @@ function BookStructure(author, title, shelf, status, id)
 	this.shelf = shelf;
 	this.status = status;
 	this.id = id;
+}
 
-	this.remove = function()
-	{
+BookStructure.prototype = {
+	remove: function(){
 		this.status = "offShelf";
 		main(books);
-	}
-	this.add = function()
-	{
+	},
+	add: function(){
 		this.status = "onShelf";
 		main(books);
 	}
-}
+};
 
 var book1 = new BookStructure('J.K. Rowling', 'Harry Porter', 'odd', "onShelf", "book1");
 var book2 = new BookStructure('David Michell', 'The Bone Clocks', 'even', "onShelf", "book2");
